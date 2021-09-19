@@ -4,63 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lab 1</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Portfolio</title>
 </head>
 <body>
-    <!-- Menu  -->
-    <nav>
-        <div class="container">
-            <ul>
-                <li> <a href="#edu">Education</a></li>
-                <li> <a href="#sk">Skills</a></li>
-                <li> <a href="#cont">Contacts</a></li>
-            </ul>
+    <!-- Menu -->
+    <section class="menu">
+        <div class="menu-item"><a class="link" href="#me">Me</a></div>
+        <div class="menu-item"><a class="link" href="#works">Works</a></div>
+        <div class="menu-item"><a class="link" href="#contacts">Contacts</a></div>
+    </section>
+
+    <!-- Person info header-->
+    <section class="hero" id="me">
+        <img class="my-photo" src="./img/384px-TatyanaGarkava.jpg" alt="my photo">
+        <h3 class="name">Garkava Tatyana</h3>
+        <h5 class="name">Гарькава Тетяна Анатоліївна</h5>
+        <h1 class="name">Master of Petrikivsky painting</h1>
+    </section>
+
+    <!-- Person info details -->
+    <section class="about-me">
+        <p>Ukrainian artist, teacher, Honored Master of Folk Art of Ukraine, National Master of Petrikivsky painting, Vice-President of the public organization "Association of Masters of Folk Art of Ukraine".</p>
+        <div class="butt">
+            <button class="butt-style-1">See Resume</button>
+            <button class="butt-style-2">See Works</button>
+        </div>
+    </section>
+
+    <!-- Works -->
+    <section class="works" id="works">
+        <h2 class="name">Works</h2>
+        <p>There is some of my works</p>
+        <div class="works-photo">
+            <img class="img-work" src="./img/1.jpg" alt="photo 1">
+            <img class="img-work" src="./img/2.jpg" alt="photo 2">
+            <img class="img-work" src="./img/3.jpg" alt="photo 3">
+            <img class="img-work" src="./img/4.jpg" alt="photo 4">
+            <img class="img-work" src="./img/5.jpg" alt="photo 5">
+            <img class="img-work" src="./img/6.jpg" alt="photo 6">  
         </div>
 
-    </nav>
-    <!-- Hero  -->
-    <section class="hero"> 
-        <div class="container">
-            <div class="about-me">
-                <h1>Dolmatova Viktoriia</h1>
-                <p>Student</p>
-            </div>
-            <div class="photo">
-                <img src="photo.jpg" width="270" alt="my photo">
-            </div>
-        </div>
     </section>
-    <!-- Education  -->
-    <section class="education">
-        <p><a name="edu"></a></p>
+
+
+    <!-- Contacts -->
+    <section class="contacts" id="contacts">
         <div class="container">
-            <h1>Education</h1>
-            <div class="card">
-                <h3>University</h3>
-                <p>Taras Shevchenko National University of Kyiv</p>
-                <h3>School</h3>
-                <p>Specialized School with profound study of the Ukrainian language and literature</p>
-            </div>
-        </div>
-    </section>
-    <!-- Skills  -->
-    <section id="sk" class="skills">
-        <div class="container">
-            <h1>Skills</h1>
-            <table>
-                <tr>
-                    <th>CCNA R&S: Introduction to Networks</th></tr>
-                    <th>Adobe Photoshop</th></tr>
-                    <th>Microsoft Office</th></tr>
-                    <th></th></tr>
-            </table>
-        </div> 
-    </section>
-    <!-- Contacts  -->
-    <section id="cont" class="contacts"> 
-        <div class="container">
-            <h1>For contacts</h1>
+            <h1 class="name">For contacts</h1>
             <form action="">
                 <div class="form-item"> 
                     <label for="Name"></label>
@@ -74,20 +65,20 @@
                         <label for="Message"></label>
                         <textarea cols="40" rows="9" placeholder="Enter message"></textarea> 
                     </div>
-                    <div class="form-item">                   
-                        <input type="submit" value="Send">
+                    <div class="form-item send-but">                   
+                        <button>Send</button>
                     </div>
 
             </form>
         </div>
     </section>
-
-    <footer>  
-        <div class="container">
-            <div class="copyright">
-                <p>&copy; V.Dolmatova 2021</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
+
+<footer>  
+    <div>
+        <div class="copyright">
+            <p>&copy; Made for educational purposes only. The creator has no right to the works here.</p>
+        </div>
+    </div>
+</footer>
