@@ -70,4 +70,25 @@ body {
   color: #634610;
 }
 
+.increase, .decrease {
+  background-color: burlywood;
+  color: #634610;
+}
+
+.increase:hover, .decrease:hover {
+  background-color: chocolate;
+  color: cornsilk;
+}
+
+#removeall, #pay {
+  margin-left: 30px;
+  background-color: burlywood;
+  color: #634610;
+}
+
+#removeall:hover, #pay:hover {
+  background-color: chocolate;
+  color: cornsilk;
+}
+
 /*# sourceMappingURL=/cart-style.7a790869.css.map */

@@ -1,5 +1,8 @@
 body {
   background-color: #fff6eb;
+  max-width: 650px;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 
 .products-container {
@@ -28,36 +31,43 @@ body {
   width: 15%;
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .quantity {
   width: 30%;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .total {
   width: 10%;
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .products {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.products img {
+.products img, .cart-name {
   width: 75px;
 }
 
 .basketTotalTitle {
   width: 30%;
+  margin: 10px;
 }
 
 .basketTotal {
   width: 10%;
+  margin: 10px;
+  margin-top: 21px;
 }
 
 .go-back {
@@ -68,4 +78,37 @@ body {
 .go-back:visited {
   text-decoration: none;
   color: #634610;
+}
+
+.increase, .decrease {
+  background-color: burlywood;
+  color: #634610;
+}
+
+.increase:hover, .decrease:hover {
+  background-color: chocolate;
+  color: cornsilk;
+}
+
+#removeall, #pay {
+  margin-left: 30px;
+  background-color: burlywood;
+  color: #634610;
+}
+
+#removeall:hover, #pay:hover {
+  background-color: chocolate;
+  color: cornsilk;
+}
+
+.basketTotalContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.quantity {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }/*# sourceMappingURL=cart-style.css.map */

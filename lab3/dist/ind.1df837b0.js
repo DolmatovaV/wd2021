@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/ind.js":[function(require,module,exports) {
-'use strict';
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -153,7 +151,8 @@ var _loop = function _loop(i) {
 
 for (var i = 0; i < carts.length; i++) {
   _loop(i);
-}
+} //перевіряє local storage і виводить в меню кількість
+
 
 function onLoadCartNumbers() {
   var productNumbers = localStorage.getItem('cartNumber');
@@ -161,25 +160,29 @@ function onLoadCartNumbers() {
   if (productNumbers) {
     document.querySelector('number-in-cart').textContent = productNumbers;
   }
-}
+} //рахує натискання на осн сторінці
+
 
 function cartNumbers(product) {
-  var productNumbers = localStorage.getItem('cartNumbers');
+  var productNumbers = localStorage.getItem('cartNumbers'); // cartNumbers -- загальна кількість товарів у корзині, для виводу в меню index.html
+
   productNumbers = parseInt(productNumbers);
 
   if (productNumbers) {
     localStorage.setItem('cartNumbers', productNumbers + 1);
-    document.querySelector('.cart span').textContent = productNumbers + 1;
+    document.querySelector('.number-in-cart').textContent = productNumbers + 1;
   } else {
     localStorage.setItem('cartNumbers', 1);
-    document.querySelector('.cart span').textContent = 1;
+    document.querySelector('.number-in-cart').textContent = 1;
   }
 
   setItems(product);
-}
+} //рахує кількість речей для кожного виду
+
 
 function setItems(product) {
-  var cartItems = localStorage.getItem('productsInCart');
+  var cartItems = localStorage.getItem('productsInCart'); //к-сть кожного виду
+
   cartItems = JSON.parse(cartItems);
 
   if (cartItems != null) {
@@ -210,34 +213,32 @@ function totalCost(product) {
 function displayCart() {
   var cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
-  var productContainer = document.querySelector('.product');
+  var productContainer = document.querySelector('.products');
   var cartCost = localStorage.getItem('totalCost');
 
   if (cartItems && productContainer) {
     productContainer.innerHTML = '';
     Object.values(cartItems).map(function (item) {
-      productContainer.innerHTML += "\n            <div class=\"products\">\n            <img src=\"./images/".concat(item.tag, ".jpg\">\n            <span>").concat(item.name, "</span>\n            </div>\n            <div class=\"price\">").concat(item.price, "</div>\n            <div class=\"quantity\"> \n            <ion-icon class=\"decrease' name=\"arrow-dropdown\"></ion-icon>\n            <span>").concat(item.inCart, "</span>\n            <ion-icon class=\"increase\" name=\"arrow-dropup\"></ion-icon>\n            </div>\n            <div class=\"total\">\n                ").concat(item.inCart * item.price, ",00\n            </div>\n            ");
+      productContainer.innerHTML += "\n            <div class=\"products\" id=\"".concat(item.tag, "\">\n                <span class=\"cart-name\">").concat(item.name, "</span>\n\n                <div class=\"price\">").concat(item.price, "</div>\n                <div class=\"quantity\"> \n                <button class=\"increase\">+</button> \n                <span class=\"number-of-item-incart\">").concat(item.inCart, "</span>\n                <button class=\"decrease\">-</button>\n                </div>\n                <div class=\"total\">\n                    ").concat(item.inCart * item.price, ",00\n                </div>\n            </div>\n            ");
     });
-    productContainer.innerHTML += "\n        <div class=\"basketTotalContainer\">\n            <h4 class=\"BasketTotalTitle\">\n                Bsket Total </h4>\n            <h4> \n                ".concat(cartCost, ",00\n            </h4>\n        </div>\n        ");
+    productContainer.innerHTML += "\n        <div class=\"basketTotalContainer\">\n            <h4 class=\"BasketTotalTitle\">\n                Basket Total </h4>\n            <h4> \n                ".concat(cartCost, ",00\n            </h4>\n        </div>\n        ");
   }
+} // function buttonPlus{
+// }
+
+
+function clearAll() {
+  localStorage.clear();
+  location.reload();
 }
 
-function removeCartItem(event) {
-  var buttonClicked = event.target;
-  buttonClicked.parentElement.parentElement.remove();
-  totalCost();
+function buying() {
+  alert("Thanks!");
+  clearAll();
 }
 
-function quantityChanged(event) {
-  var input = event.target;
-
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1;
-  }
-
-  totalCost();
-}
-
+removeall.onclick = clearAll;
+pay.onclick = buying;
 onLoadCartNumbers();
 displayCart();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -268,7 +269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54814" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61788" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
