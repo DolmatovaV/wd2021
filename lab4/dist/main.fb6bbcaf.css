@@ -1,0 +1,73 @@
+body {
+  background-color: #c3e9ff;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+  font-size: large;
+  font-family: sans-serif;
+  font-weight: 120;
+}
+
+.hello-header {
+  background-color: cornflowerblue;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  background-color: darkblue;
+  color: #c5c5c5;
+}
+
+.left-column {
+  height: 20px;
+  width: 200px;
+}
+
+.weather-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather-info {
+  background-color: whitesmoke;
+  padding: 0 20px 0 20px;
+  width: fit-content;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.place-box {
+  background-color: whitesmoke;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+
+.place-photo {
+  height: 300px;
+  width: 300px;
+}
+
+footer {
+  font-size: small;
+  color: cornflowerblue;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=/main.fb6bbcaf.css.map */
